@@ -1,0 +1,122 @@
+/* SCSS */
+/* Globals */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+.s-contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+/* Form styling */
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+.form_wrapper {
+  max-width: 600px;
+  padding: 30px;
+  -webkit-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.2);
+  background-color: #fafafa;
+  margin: 0 auto;
+}
+
+.form_title {
+  margin-top: 0;
+  font-weight: 700;
+  font-size: 32px;
+  color: #222222;
+}
+
+.form_group {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 580px) {
+  .form_group--half {
+    width: calc(50% - 10px);
+  }
+}
+
+@media screen and (min-width: 580px) {
+  .form_group_holder {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.form_description {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.form_input {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 6px 5px;
+  border: 1px solid #c5c3c3;
+}
+
+.form_input--textarea {
+  resize: none;
+}
+
+.btn {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn--submit {
+  font-size: 20px;
+  padding: 12px 24px;
+  background-color: #325bb6;
+  color: #fff;
+}
+
+/* Validation errors */
+.jsfv-error {
+  border-color: #ff3333;
+}
+/*# sourceMappingURL=style.css.map */
