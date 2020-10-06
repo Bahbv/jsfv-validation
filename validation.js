@@ -28,7 +28,7 @@
     event.preventDefault();
     var passedValidation = true;
     var form = event.target;
-    var fieldCollection = form.querySelectorAll("*[class^='jsfv-']");
+    var fieldCollection = form.querySelectorAll("[class^='jsfv-']");
     console.log(fieldCollection);
     if (fieldCollection.length <= 0){
         return;
