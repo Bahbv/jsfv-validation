@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form validatie test</title>
-    <link rel="stylesheet" href="style.css">
+    <title>jsfv-validation demo</title>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <link rel="stylesheet" href="demo.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <section class="s-contact">
         <div class="container">
             <div class="form_wrapper">
-                <h1 class="form_title"> Stuur ons een berichtje! </h1>
+                <h2 class="form_title"> Stuur ons een berichtje! </h1>
                 <form id="form1" class="form" action="">
                     
                     <div class="form_group_holder">
                         <div class="form_group form_group--half">
                             <label>
                                 <span class="form_description">Voornaam<i class="form_required" aria-hidden="true">*</i></span>
-                                <input type="text" name="voornaam" class="form_input  jsfv-validate jsfv-required jsfv-name"
+                                <input type="text" name="voornaam" class="form_input jsfv-required jsfv-name"
                                     autocomplete="given-name" val="" aria-required="true">
                             </label>
                         </div>
@@ -26,7 +27,7 @@
                         <div class="form_group form_group--half">
                             <label>
                                 <span class="form_description">Achternaam<i class="form_required" aria-hidden="true">*</i></span>
-                                <input type="text" name="achternaam" class="form_input jsfv-validate jsfv-required jsfv-name"
+                                <input type="text" name="achternaam" class="form_input jsfv-required jsfv-name"
                                     autocomplete="family-name" val="" aria-required="true">
                             </label>
                         </div>
@@ -35,7 +36,7 @@
                     <div class="form_group form_group--full">
                         <label>
                             <span class="form_description">E-mail<i class="form_required" aria-hidden="true">*</i></span>
-                            <input type="text" name="email" class="form_input jsfv-validate jsfv-required jsfv-email"
+                            <input type="text" name="email" class="form_input jsfv-required jsfv-email"
                                 autocomplete="email" val="" aria-required="true">
                         </label>
                     </div>
@@ -43,7 +44,7 @@
                     <div class="form_group form_group--full">
                         <label>
                             <span class="form_description">Telefoonnummer</span>
-                            <input type="text" name="telefoon" class="form_input jsfv-validate jsfv-phone"
+                            <input type="text" name="telefoon" class="form_input  jsfv-phone"
                                 autocomplete="tel" val="">
                         </label>
                     </div>
@@ -51,7 +52,7 @@
                     <div class="form_group form_group--full">
                         <label>
                             <span class="form_description">Wat wilt u ons vertellen?</span>
-                            <textarea rows="10" name="bericht" class="form_input form_input--textarea jsfv-validate jsfv-required jsfv-message"></textarea>
+                            <textarea rows="10" name="bericht" class=" form_input form_input--textarea jsfv-required jsfv-message"></textarea>
                         </label>
                     </div>
 
@@ -65,6 +66,14 @@
     </section>
 
 
-    <script src="validation.js" type="text/javascript"></script>
+    <script src="../src/jsfv.js" type="text/javascript"></script>
+    <script>
+        /**
+         * Add the eventlisteners for the form's.
+         * Could use a htmlcollection to iterate over.
+         */
+        var form = document.getElementById('form1');
+        form.addEventListener("submit", jsfvValidate);
+    </script>
 </body>
 </html>

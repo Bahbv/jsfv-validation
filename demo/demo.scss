@@ -28,6 +28,7 @@ html, body {
     align-items:center;
     height:100%;
 }
+
 /* Form styling */
 .form {
     display: flex;
@@ -41,7 +42,8 @@ html, body {
         -moz-box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.2);
         box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.2);
         background-color: #fafafa;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     &_title {
@@ -105,4 +107,9 @@ html, body {
 /* Validation errors */
 .jsfv-error {
     border-color:#ff3333;
+}
+.jsfv-errormsg {
+    color: #ff3333;
+    font-size:80%;
+    display: block;
 }
