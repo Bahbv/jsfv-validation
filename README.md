@@ -18,6 +18,3 @@ jsfv-phone    : Should be a valid phone number
 jsfv-message  : Should have at least X amount of characters
 ```
 
-## Note
-Always make use of back end validation!  
-Feel free to change to your own needs.
