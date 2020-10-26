@@ -20,9 +20,9 @@
  */
 function jsfvValidate() {
    event.preventDefault();
-   var form = event.target;
-   var fieldCollection = form.querySelectorAll('[class*="jsfv-"]');
-   var passedValidation = true;
+   const form = event.target;
+   const fieldCollection = form.querySelectorAll('[class*="jsfv-"]');
+   let passedValidation = true;
 
    jsfvRemoveErrors(form);
 
@@ -31,7 +31,7 @@ function jsfvValidate() {
    }
 
    for (let field of fieldCollection) {
-      var next = true;
+      let next = true;
 
       if (field.classList.contains("jsfv-required") && next) {
          if (!jsfvRequired(field)) { passedValidation = false; next = false; }
@@ -66,7 +66,7 @@ function jsfvValidate() {
 function jsfvRequired(field) {
    field.value = field.value.replace(/^\s+/, "").replace(/\s+$/, "").replace(/\s+/, " ")
    if (field.value == "") {
-      var id = jsfvRandomId();
+      const id = jsfvRandomId();
       field.setAttribute("aria-invalid", "true");
       field.setAttribute("aria-describedBy", id);
       field.classList.add('jsfv-error');
@@ -85,7 +85,7 @@ function jsfvRequired(field) {
  * @returns bool 
  */
 function jsfvName(field) {
-   var name = field.value;
+   let name = field.value;
    name = name.replace(/^\s+/, "").replace(/\s+$/, "").replace(/\s+/, " ")
    field.value = name;
    return true;
@@ -99,10 +99,10 @@ function jsfvName(field) {
  * @returns bool
  */
 function jsfvEmail(field) {
-   var regex = /\S+@\S+/;
+   const regex = /\S+@\S+/;
    if (field.value !== "") {
       if (!regex.test(field.value)) {
-         var id = jsfvRandomId();
+         const id = jsfvRandomId();
          field.setAttribute("aria-invalid", "true");
          field.setAttribute("aria-describedBy", id);
          field.classList.add('jsfv-error');
@@ -121,10 +121,10 @@ function jsfvEmail(field) {
  * @returns bool
  */
 function jsfvPhone(field) {
-   var regex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
+   const regex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
    if (field.value != "") {
       if (!regex.test(field.value) || field.value.length < 6) {
-         var id = jsfvRandomId();
+         const id = jsfvRandomId();
          field.setAttribute("aria-invalid", "true");
          field.setAttribute("aria-describedBy", id);
          field.classList.add('jsfv-error');
@@ -145,7 +145,7 @@ function jsfvPhone(field) {
  */
 function jsfvMessage(field, char = 10) {
    if (field.value.length < char) {
-      var id = jsfvRandomId();
+      const id = jsfvRandomId();
       field.setAttribute("aria-invalid", "true");
       field.setAttribute("aria-describedBy", id);
       field.classList.add('jsfv-error');
@@ -161,8 +161,8 @@ function jsfvMessage(field, char = 10) {
  * @param {*} form the form where the errors should be removed
  */
 function jsfvRemoveErrors(form) {
-   var errorFields = form.querySelectorAll(".jsfv-error");
-   var errorMessages = form.querySelectorAll(".jsfv-errormsg")
+   const errorFields = form.querySelectorAll(".jsfv-error");
+   const errorMessages = form.querySelectorAll(".jsfv-errormsg")
    for (let field of errorFields) {
       field.classList.remove("jsfv-error");
       field.removeAttribute("aria-invalid");
@@ -183,8 +183,8 @@ function jsfvRemoveErrors(form) {
  * @param {*} message the message that should be shown
  */
 function jsfvErrorMessage(field, id, message) {
-   var node = document.createElement("span");
-   var content = document.createTextNode(message);
+   let node = document.createElement("span");
+   let content = document.createTextNode(message);
    node.className = "jsfv-errormsg";
    node.id = id;
    node.appendChild(content);
