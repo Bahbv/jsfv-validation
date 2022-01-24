@@ -16,5 +16,6 @@ jsfv-name     : Should be a valid name (removes whitespace)
 jsfv-email    : Should be a valid email (should have a@b)
 jsfv-phone    : Should be a valid phone number
 jsfv-message  : Should have at least X amount of characters
+jsfv-agree    : Checkbox should be checked
 ```
 

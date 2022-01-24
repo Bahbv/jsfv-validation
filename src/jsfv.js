@@ -48,6 +48,9 @@ function jsfvValidate() {
       if (field.classList.contains("jsfv-message") && next) {
          if (!jsfvMessage(field)) { passedValidation = false; next = false; }
       }
+      if (field.classList.contains("jsfv-agree") && next) {
+         if (!jsfvAgree(field)) { passedValidation = false; next = false; }
+      }
    }
 
    if (passedValidation) {
@@ -89,6 +92,27 @@ function jsfvName(field) {
    name = name.replace(/^\s+/, "").replace(/\s+$/, "").replace(/\s+/, " ")
    field.value = name;
    return true;
+}
+
+/**
+ * There are times where you need a checkbox to be checked to continue
+ * Use this for privacy policy boxes or other mandatory agreements.
+ *
+ * @param {*} field the input field that should be validated
+ * @returns bool 
+ */
+ function jsfvAgree(field) {
+   if (field.checked){
+      return true;
+   } else {
+      const id = jsfvRandomId();
+      field.setAttribute("aria-invalid", "true");
+      field.setAttribute("aria-describedBy", id);
+      field.classList.add('jsfv-error');
+      jsfvErrorMessage(field, id, "U moet akkoord gaan om door te gaan.")
+      return false;
+   }
+   
 }
 
 /**
